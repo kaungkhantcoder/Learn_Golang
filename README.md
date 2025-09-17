@@ -1,3 +1,3 @@
-***This repo is my Golang journey.***
+**🦦 GoLang Learning Journey 🚀**
 
-**Learn from YouTube**
+This repository documents my journey of learning the Go programming language (also known as Golang) from various YouTube tutorials.
