@@ -1,2 +1,3 @@
-*** This repo is my Golang journey. ***
-** Learn from YouTube **
+***This repo is my Golang journey.***
+
+**Learn from YouTube**
