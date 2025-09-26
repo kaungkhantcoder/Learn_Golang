@@ -27,7 +27,14 @@ func main() {
 		}
 		tmpl.Execute(w, clubs)
 	}
+
+	h2 := func (w http.ResponseWriter, r *http.Request) {
+		log.Print("HTMX request received")
+		log.Print(r.Header.Get("HX-Request"))
+	}
+
 	http.HandleFunc("/", h1)
+	http.HandleFunc("/add-club/", h2)
 
 	log.Fatal(http.ListenAndServe(":8000", nil))
 }
