@@ -13,7 +13,7 @@
         <div class="col-8">
             <h1 class="mb-4">Football Club Lists</h1>
 
-            <ul class="list-group fs-5 me-5">
+            <ul class="list-group fs-5 me-5" id="club-list">
                 {{ range .Club }}
                     <li class="list-group-item bg-primary text-white">{{ .Name }} - {{ .City }}</li>
                 {{ end }}
@@ -23,10 +23,10 @@
         <div class="col-4">
             <h1 class="mb-4">Add Club</h1>
 
-            <form hx-post="/add-club/">
+            <form hx-post="/add-club/" hx-target="#club-list">
                 <div class="mb-2">
                     <label for="club-name">Club Name</label>
-                    <input type="text" name="name" id="club-name" class="form-control"/>
+                    <input type="text" name="club" id="club-name" class="form-control"/>
                 </div>
                 <div class="mb-3">
                     <label for="city-name">City Name</label>

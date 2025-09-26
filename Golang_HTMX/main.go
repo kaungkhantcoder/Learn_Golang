@@ -29,8 +29,11 @@ func main() {
 	}
 
 	h2 := func (w http.ResponseWriter, r *http.Request) {
-		log.Print("HTMX request received")
-		log.Print(r.Header.Get("HX-Request"))
+		club := r.PostFormValue("club")
+		city := r.PostFormValue("city")
+		htmlStr := fmt.Sprintf("<li class='list-group-item bg-primary text-white'>%s - %s</li>", club, city )
+		tmpl, _ := template.New("t").Parse(htmlStr)
+		tmpl.Execute(w, nil)
 	}
 
 	http.HandleFunc("/", h1)
