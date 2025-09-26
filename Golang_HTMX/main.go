@@ -3,7 +3,8 @@ package main
 import (
 	"fmt" // Format Module
 	"html/template"
-	
+	"time"
+
 	"log"
 	"net/http"
 )
@@ -29,11 +30,11 @@ func main() {
 	}
 
 	h2 := func (w http.ResponseWriter, r *http.Request) {
+		time.Sleep(1 * time.Second)
 		club := r.PostFormValue("club")
 		city := r.PostFormValue("city")
-		htmlStr := fmt.Sprintf("<li class='list-group-item bg-primary text-white'>%s - %s</li>", club, city )
-		tmpl, _ := template.New("t").Parse(htmlStr)
-		tmpl.Execute(w, nil)
+		tmpl := template.Must(template.ParseFiles("index.html"))
+		tmpl.ExecuteTemplate(w, "club-name", Club{Name: club, City: city})
 	}
 
 	http.HandleFunc("/", h1)
