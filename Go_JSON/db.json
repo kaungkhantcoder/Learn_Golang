@@ -1,0 +1,34 @@
+{
+  "todos": [
+    {
+      "userId": 1,
+      "id": 1,
+      "title": "Bombardiro Crocodilo",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 2,
+      "title": "Tung Tung Tung Sahur",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 3,
+      "title": "Chimpanzini Bananini",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 4,
+      "title": "Tripi Tripo",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 5,
+      "title": "Ballerina Cappuccina",
+      "completed": false
+    }
+  ]
+}
