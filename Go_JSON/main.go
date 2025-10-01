@@ -4,44 +4,24 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
-	"net/http"
 )
 
 type Todo struct {
-	UserID 		int		`json:"userId"`
-	ID			string	`json:"id"`
-	Title		string	`json:"title"`
+	UserID 		int		`json:"-"`
+	ID			int		`json:"-"`
+	Title		string	`json:"title,omitempty"`
 	Completed	bool	`json:"completed"`
 }
 
 func main() {
+
+	todoItem := &Todo{1, 1, "", false}
 	
-	url := "http://localhost:3000/todos/1"
-
-	response, err := http.Get(url)
-
+	// Convert back to JSON
+	todo, err := json.MarshalIndent(todoItem, "", "\t")
 	if err != nil {
-		log.Fatal(err)
-	}
-
-	defer response.Body.Close()
-
-	if response.StatusCode == http.StatusOK {
-		todoItem := Todo{}
-
-		decoder := json.NewDecoder(response.Body)
-
-		if err := decoder.Decode(&todoItem); err != nil {
-			log.Fatal("Decode error: ", err)
-		}
-
-		// Convert back to JSON
-		todo, err := json.MarshalIndent(todoItem, "", "\t")
-		if err != nil {
 			log.Fatal(err)
-		}
-
-		fmt.Println(string(todo))
-
 	}
+
+	fmt.Println(string(todo))
 }
