@@ -8,7 +8,7 @@ import (
 )
 
 type Todo struct {
-	UserID 		int
+	UserID 		int		`json:"userId"`
 	ID			string	`json:"id"`
 	Title		string	`json:"title"`
 	Completed	bool	`json:"completed"`
@@ -35,7 +35,13 @@ func main() {
 			log.Fatal("Decode error: ", err)
 		}
 
-		fmt.Printf("Data from API: %+v", todoItem)
+		// Convert back to JSON
+		todo, err := json.MarshalIndent(todoItem, "", "\t")
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		fmt.Println(string(todo))
 
 	}
 }
