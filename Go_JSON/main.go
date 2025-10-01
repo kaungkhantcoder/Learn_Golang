@@ -8,15 +8,15 @@ import (
 )
 
 type Todo struct {
-	UserID 		int 	`json:"userId"`
-	ID			int		`json:"id"`
+	UserID 		int
+	ID			string	`json:"id"`
 	Title		string	`json:"title"`
 	Completed	bool	`json:"completed"`
 }
 
 func main() {
 	
-	url := "https://dummyjson.com/todos/1"
+	url := "http://localhost:3000/todos/1"
 
 	response, err := http.Get(url)
 
@@ -27,10 +27,13 @@ func main() {
 	defer response.Body.Close()
 
 	if response.StatusCode == http.StatusOK {
-
 		todoItem := Todo{}
 
-		json.NewDecoder(response.Body).Decode(&todoItem)
+		decoder := json.NewDecoder(response.Body)
+
+		if err := decoder.Decode(&todoItem); err != nil {
+			log.Fatal("Decode error: ", err)
+		}
 
 		fmt.Printf("Data from API: %+v", todoItem)
 
