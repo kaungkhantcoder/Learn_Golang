@@ -23,7 +23,7 @@ func main() {
 			"Club": {
 				{Name: "Arsenal", City: "London"},
 				{Name: "Chelsea", City: "London"},
-				{Name: "Manchester United", City: "Manchester"},
+				{Name: "Newcastle", City: ""},
 			},
 		}
 		tmpl.Execute(w, clubs)
