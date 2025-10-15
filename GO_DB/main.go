@@ -31,25 +31,27 @@ func main() {
 
 	createProductTable(db)
 
-	// product := Product{"Book", 15.55, true}
-	// pk := insertProduct(db, product)
+	data := []Product{}
+	rows, err := db.Query("SELECT name, available, price FROM product")
+	if err != nil {
+		log.Fatal(err)
+	}
 
+	defer rows.Close()
+	// to scan DB vals
 	var name string
 	var available bool
 	var price float64
 
-	query := "SELECT name, available, price FROM product WHERE id = $1"
-	err = db.QueryRow(query, 111).Scan(&name, &available, &price)
-	if err != nil {
-		if err == sql.ErrNoRows {
-			log.Fatalf("No rows found with ID %d", 111) // handle logic here
+	for rows.Next() {
+		err := rows.Scan(&name, &available, &price)
+		if err != nil {
+			log.Fatal(err)
 		}
-		log.Fatal(err)
+		data = append(data, Product{name, price, available})
 	}
 
-	fmt.Printf("Name: %s\n", name) // %s => prints string
-	fmt.Printf("Available: %t\n", available) // %t => prints true or false
-	fmt.Printf("Price: %f\n", price) // %f => prints float
+	fmt.Println(data)
 }
 
 func createProductTable(db *sql.DB) {
