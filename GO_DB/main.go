@@ -19,7 +19,7 @@ func main() {
 
 	db, err := sql.Open("postgres", connStr)
 
-	// defer db.Close()
+	defer db.Close()
 
 	if err != nil {
 		log.Fatal(err)
