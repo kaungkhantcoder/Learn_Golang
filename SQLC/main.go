@@ -1,19 +1,19 @@
-// package main
+package main
 
-// import (
-// 	"database/sql"
-// 	"log"
-// 	_ "github.com/lib/pq"
-// )
+import (
+	"database/sql"
+	"log"
+	_ "github.com/lib/pq"
+)
 
-// func main() {
-// 	connStr := "postgres://postgres::@localhost:5432/sqlctest?sslmode=disabled"
+func main() {
+	connStr := "postgres://postgres::@localhost:5432/sqlctest?sslmode=disabled"
 
-// 	db, err := sql.Open("postgres", connStr)
+	db, err := sql.Open("postgres", connStr)
 
-// 	if err != nil {
-// 		log.Fatal(err)
-// 	}
+	if err != nil {
+		log.Fatal(err)
+	}
 
-// 	defer db.Close()
-// }
+	defer db.Close()
+}
