@@ -16,4 +16,6 @@ func main() {
 
 	res = plusPlus(5, 10, 15)
 	fmt.Println(res)
+
+	switch_fun()
 }
