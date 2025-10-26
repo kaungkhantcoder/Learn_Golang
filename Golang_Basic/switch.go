@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func switch_fun() {
+func Switch_fun() {
 	i := 2
 	fmt.Print("Write ", i, " as ")
 	switch i {

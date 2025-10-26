@@ -10,7 +10,7 @@ func plusPlus(a, b, c int) int {
 	return a + b + c
 }
 
-func _function(){
+func Function(){
 	res := plus(5, 10)
 	fmt.Println(res)
 

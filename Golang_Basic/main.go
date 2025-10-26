@@ -1,7 +1,6 @@
 package main
 
 func main() {
-	_function()
-	switch_fun()
-
+	Function()
+	Switch_fun()
 }
