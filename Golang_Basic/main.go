@@ -5,4 +5,5 @@ func main() {
 	Switch_fun()
 	Array()
 	IfElse()
+	Pointers()
 }
