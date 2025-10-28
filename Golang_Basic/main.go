@@ -7,4 +7,5 @@ func main() {
 	IfElse()
 	Pointers()
 	Sortings()
+	Closures()
 }
