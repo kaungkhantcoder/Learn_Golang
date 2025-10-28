@@ -6,4 +6,5 @@ func main() {
 	Array()
 	IfElse()
 	Pointers()
+	Sortings()
 }
