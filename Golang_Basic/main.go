@@ -8,4 +8,5 @@ func main() {
 	Pointers()
 	Sortings()
 	Closures()
+	Methods()
 }
