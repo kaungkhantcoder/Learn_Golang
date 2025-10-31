@@ -9,4 +9,5 @@ func main() {
 	Sortings()
 	Closures()
 	Methods()
+	Errors()
 }
