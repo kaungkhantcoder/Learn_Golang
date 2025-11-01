@@ -10,4 +10,5 @@ func main() {
 	Closures()
 	Methods()
 	Errors()
+	Enums()
 }
