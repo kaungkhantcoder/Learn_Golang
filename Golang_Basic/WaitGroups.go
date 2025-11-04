@@ -20,7 +20,7 @@ func WaitGroups() {
 		go func(workerID int){
 			defer wg.Done()
 			worker(workerID)
-		}{i}
+		}(i)
 	}
 	wg.Wait()
 }
