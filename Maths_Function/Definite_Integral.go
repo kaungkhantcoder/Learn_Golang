@@ -5,8 +5,6 @@ import (
 	"math"
 )
 
-// Function represents a mathematical function f(x) that takes a float64
-// and returns a float64. This is the function we want to integrate.
 type Function func(x float64) float64
 
 // DefiniteIntegral approximates the definite integral of f(x) from a to b
@@ -14,25 +12,20 @@ type Function func(x float64) float64
 // This function is an implementation of the numerical principle behind
 // the Fundamental Theorem of Calculus Part 2 (FTC2).
 func DefiniteIntegral(f Function, a, b float64, n int) float64 {
-	// Ensure n is a positive integer to avoid division by zero or nonsensical results
+
 	if n <= 0 {
-		n = 1000 // Default to 1000 steps if n is invalid
+		n = 1000 
 	}
 
-	// Calculate the width of each trapezoid (h or delta x)
 	h := (b - a) / float64(n)
 
-	// Initialize the total area with the first and last point contribution
-	// The Trapezoidal Rule weights the endpoints by 1/2
 	area := 0.5 * (f(a) + f(b))
 
-	// Sum the function values at the interior points (x_1 to x_{n-1})
 	for i := 1; i < n; i++ {
 		x_i := a + float64(i)*h
 		area += f(x_i)
 	}
 
-	// Multiply the sum by the width h (delta x) to get the final area approximation
 	return area * h
 }
 
