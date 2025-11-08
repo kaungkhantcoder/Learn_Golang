@@ -5,7 +5,7 @@ import (
 )
 
 func printHollowSquare(N int) {
-	
+
 	if N <= 0 {
 		fmt.Println("Side length must be a positive integer.")
 		return
@@ -32,7 +32,7 @@ func HollowSquare() {
 
 	fmt.Println("\n---")
 	
-	sideLength = 8 
+	sideLength = 5
 	fmt.Printf("Hollow Square Pattern (N=%d):\n", sideLength)
 	printHollowSquare(sideLength)
 }
