@@ -4,4 +4,5 @@ func main() {
 	R_Triangle()
 	Pyramid()
 	Diamond()
+	HollowSquare()
 }
