@@ -6,4 +6,5 @@ func main() {
 	Diamond()
 	HollowSquare()
 	ReverseTriangle()
+	Butterfly()
 }
