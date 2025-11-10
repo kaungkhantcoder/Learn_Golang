@@ -5,4 +5,5 @@ func main() {
 	Pyramid()
 	Diamond()
 	HollowSquare()
+	ReverseTriangle()
 }
