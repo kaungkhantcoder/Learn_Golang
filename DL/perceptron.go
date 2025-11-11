@@ -124,3 +124,11 @@
 // 		fmt.Printf("Input: %v, Target: %d, Prediction: %d\n", inputs, yOr[i], prediction)
 // 	}
 // }
+
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Not Available!")
+}
