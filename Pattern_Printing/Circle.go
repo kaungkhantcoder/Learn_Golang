@@ -23,7 +23,7 @@ func Circle() {
 
 
 			if math.Abs(distance - radius) < tolerance {
-				fmt.Print("● ")
+				fmt.Print("* ")
 			} else {
 				fmt.Print("  ")
 			}
