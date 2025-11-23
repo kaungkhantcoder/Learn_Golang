@@ -55,7 +55,7 @@ func PrintHeartPattern(size int) {
 
 func Heart() {
 
-	heartSize := 10
+	heartSize := 5
 	fmt.Printf("Printing a heart pattern with size %d:\n\n", heartSize)
 	PrintHeartPattern(heartSize)
 }
