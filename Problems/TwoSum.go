@@ -20,7 +20,7 @@ func twoSumHashMap(nums []int, target int) []int {
 	return nil
 }
 
-func main() {
+func TwoSum() {
 	nums := []int{3,2,4}
 	target := 6
 	result := twoSumHashMap(nums, target)
